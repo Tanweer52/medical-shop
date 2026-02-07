@@ -24,7 +24,7 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export default function Restock() {
-  const { data } = useSWR('http://localhost:8000/medicines/summary', fetcher, { refreshInterval: 60000 });
+  const { data } = useSWR('https://hisdustan26-medico.vercel.app/medicines/summary', fetcher, { refreshInterval: 60000 });
   const [statusFilter, setStatusFilter] = useState<'all'|'red'|'yellow'|'green'>('all');
   const [expiryFilter, setExpiryFilter] = useState<'all'|'expired'|'expiringSoon'>('all');
   const [search, setSearch] = useState('');

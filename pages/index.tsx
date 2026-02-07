@@ -47,7 +47,7 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export default function Dashboard() {
-  const { data } = useSWR('http://localhost:8000/medicines/summary', fetcher, { refreshInterval: 60000 });
+  const { data } = useSWR('https://hisdustan26-medico.vercel.app/medicines/summary', fetcher, { refreshInterval: 60000 });
 
   // Mock today's sales data
   const todaySales = {

@@ -28,7 +28,7 @@ export default function SalesHistory() {
   }, []);
 
   // Fetch sales data only when mounted
-  const { data: salesData, error } = useSWR(mounted ? 'http://localhost:8000/sales' : null, fetcher);
+  const { data: salesData, error } = useSWR(mounted ? 'https://hisdustan26-medico.vercel.app/sales' : null, fetcher);
 
   const sales = salesData || [];
 
