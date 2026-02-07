@@ -16,7 +16,7 @@ export default function AddMedicine() {
     let id: any;
     if (name && name.length >= 2) {
       id = setTimeout(async () => {
-        const res = await fetch(`http://localhost:8000/suggest?q=${encodeURIComponent(name)}`);
+        const res = await fetch(`https://hisdustan26-medico.vercel.app/suggest?q=${encodeURIComponent(name)}`);
         const j = await res.json();
         setSuggestions(j);
       }, 220);
@@ -64,7 +64,7 @@ export default function AddMedicine() {
           price: r.price
         }))
       };
-      const res = await fetch('http://localhost:8000/medicines', {
+      const res = await fetch('https://hisdustan26-medico.vercel.app/medicines', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

@@ -24,7 +24,7 @@ export default function NewSale() {
   // Search medicines from API
   useEffect(() => {
     if (search.length >= 2) {
-      fetch(`http://localhost:8000/medicines?q=${encodeURIComponent(search)}`)
+      fetch(`https://hisdustan26-medico.vercel.app/medicines?q=${encodeURIComponent(search)}`)
         .then(r => r.json())
         .then(data => setSearchResults(data));
     } else {
@@ -71,7 +71,7 @@ export default function NewSale() {
         payment_method: paymentMethod,
         total
       };
-      const res = await fetch('http://localhost:8000/sales', {
+      const res = await fetch('https://hisdustan26-medico.vercel.app/sales', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(saleData)
